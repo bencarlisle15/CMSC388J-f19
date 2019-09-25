@@ -113,8 +113,12 @@ The `-q` flag reduces the amount of space pytest takes in the terminal when it p
 
 ## Submission & Grading
 
-We'll be giving out instructions on submitting your project soon on Piazza. Make sure all of
-your work is inside the `practice.py` file.
+Make sure that you've run the testing file, as explained above, and that you've passed all
+the tests. If you need help, come to office hours or contact us on Piazza for the quickest 
+feedback. The submit server will not show test results, but just display "ACCEPTED".
+
+Submit the `practice.py` file to the submit server. No other files are required. All your work
+must be in the `practice.py` file.
 
 There are 11 public tests, so each will be worth 10 points. There will also be 10 points for style. 
 To get full points for style, make sure your code is readable and is using reasonable variable names.
