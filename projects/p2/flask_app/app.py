@@ -6,22 +6,25 @@ poke_client = PokeClient()
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    pokemon = poke_client.get_pokemon_list()
+    return render_template('index.html', pokemon=pokemon, pokemon_length = len(pokemon))
 
-@app.route()
+@app.route('/pokemon/<name>')
 def pokemon_info(name):
     """
     Must show all the info for a pokemon identified by name
 
     Check the README for more detail
     """
-    pass
+    pokemon = poke_client.get_pokemon_info(name)
+    return render_template('pokemon.html', pokemon=pokemon, pokemon_moves_length = len(pokemon['moves']), pokemon_abilities_length=len(pokemon['abilities']))
 
-@app.route()
+@app.route('/ability/<ability>')
 def pokemon_with_ability(ability):
     """
-    Must show a list of pokemon 
+    Must show a list of pokemon
 
     Check the README for more detail
     """
-    pass
+    pokemon = poke_client.get_pokemon_with_ability(ability)
+    return render_template('ability.html', ability=ability, pokemon_length = len(pokemon), pokemon = pokemon)
