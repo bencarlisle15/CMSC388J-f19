@@ -81,4 +81,4 @@ def post_detail(title):
 
     comments = post.comments[::-1]
 
-    return render_template("post_detail.html", post=post, comments=comments, form=form)
+    return render_template("post_detail.html", post=post, comments=comments, form=form, is_authenticated=current_user.is_authenticated)

@@ -28,7 +28,7 @@ csp = {
         'audiowebsite.com',
         'videowebsite.com',
     ],
-    'script-src': 'trusted-scripts.com'
+    'script-src': 'cloudflare.com'
 }
 
 talisman = Talisman(app, content_security_policy=csp)

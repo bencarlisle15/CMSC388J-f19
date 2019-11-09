@@ -9,6 +9,16 @@ from flask_talisman import Talisman
 csp = {
     "default-src": [
         "'self'",
+    ],
+    'frame-src': 'www.youtube.com',
+    'script-src': [
+        'cdnjs.cloudflare.com',
+        'stackpath.bootstrapcdn.com',
+        'code.jquery.com'
+    ],
+    'style-src': [
+        'stackpath.bootstrapcdn.com',
+        "'self'"
     ]
 }
 
