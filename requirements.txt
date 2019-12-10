@@ -1,0 +1,9 @@
+Flask=1.1.1
+flask-sqlalchemy=2.4.1
+Flask-WTF=0.14.2
+flask-login=0.4.1
+flask-bcrypt=0.7.1
+flask-talisman=0.7.0
+flask_qrcode=3.0.0
+flask_mail=0.9.1
+pyotp=2.3.0
