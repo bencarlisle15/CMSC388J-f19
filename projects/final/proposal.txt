@@ -1,0 +1,15 @@
+Project Members: Ben Carlisle
+Project Description: In this project, a social media website similar to Facebook will be created. It will be a site where logged in users will be able to create a profile, create posts, and comments. Non-logged in users will be able to view profiles, posts, and comments but cannot create any.
+Project Requirements:
+  Login:
+    A login system will be used to allow users to add content (posts and comments) to the site. This will be an incentive since otherwise, viewers can only view content, not add to it.
+  Forms:
+    A registration and login form will be used in the user management system as well as a create post and create comment form.
+  Security:
+    A CSP using Flask-Talisman will be implemented in order to prevent unwanted (but allowing wanted) external content from being included in a page. All forms will be CSRF protected to prevent hackers from initiating unwanted actions. Flask-Talisman will be used for setting the CSP, ensures HTTPS is used, adding XSS protection, preventing clickjacking, ensuring cookies cannot be accessed with JavaScript, and preventing content sniffing. Passwords will be hashed (and salted) to prevent hackers from obtaining passwords in the event of a breach. Logins will be additionally secured using TOTP for 2 factor authentication, which prevents hackers from logging into an account even if they have that accounts password.
+  Blueprints:
+    Two blueprints will be used, one for users and one for posts. The users blueprint will be visible on the profile page (contains a user profile description set during login), on the posts page (contains a list of the newest posts from that user), and on the comments page (contains a list of the most recently created comments by that user). The posts blueprint will be visible on the main page (contains a list of the newest posts), on the hottest page (contains a list of posts with the most comments), and on the post page (shows information about a specific post). A 7th description page will have a description of the project and my name.
+  Presentation:
+    Bootstrap will be used the CSS library for this project in order to make it look presentable.
+  Package
+    Flask-Mail will be an imported package used to send a confirmation email for users to confirm their account.
