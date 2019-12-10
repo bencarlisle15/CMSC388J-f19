@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<article>
+    <div>
+        <div>
+            <!-- Post metadata -->
+            <a href="/{{post.author}}_{{post.user_id}}">{{ post.author }}</a> <br>     <!-- Should be changed -->
+            Published: {{ post.date }}    <!-- Should be changed -->
+        </div>
+        <h2>{{ post.title }}</h2>          <!-- Should be changed -->
+        <p>{{ post.content }}</p>          <!-- Should be changed -->
+    </div>
+</article>
+
+<div>
+    <h3>Comments:</h3>
+    {% for comment in comments %}
+    <div>
+        <div>
+            {{ comment.author }} at {{ comment.date }} said: <!-- Should be changed -->
+        </div>
+        <p>
+            {{ comment.content }}
+        </p>
+    </div>
+    {% endfor %}
+</div>
+<div>
+    Submit a new comment!
+    <form action="/submit_comment/{{ post.title }}" method="post" style="display: flex; flex-direction: column;">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+      Name: <input name="name">
+      Content: <input name="content">
+      Submit: <input type="submit">
+    </form>
+</div>
+{% endblock %}

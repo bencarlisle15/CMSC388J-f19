@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Welcome to my blog!</h1>
+{% for post in posts %}
+<article>
+    <div>
+        <div>
+            <!-- Post author and date of publication -->
+            <a href="/{{post.author}}_{{post.user_id}}">{{ post.author }}</a> <br> <!-- Should be changed -->
+            Published: {{ post.date }} <!-- Should be changed -->
+        </div>
+        <!-- The name of the blog post, and then the blog content -->
+        <h2><a href="posts/{{post.title}}"> {{ post.title }}</a></h2> <!-- Should be changed -->
+        <p>{{post.content }}</p> <!-- Should be changed -->
+    </div>
+</article>
+{% endfor %}
+<div>
+    Submit a new blog post!
+    <form action="/submit_post" method="post" style="display: flex; flex-direction: column;">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+        Title: <input name="title">
+        Name: <input name="name">
+        Email: <input name="email">
+        Content: <input name="content">
+        Submit: <input type="submit">
+    </form>
+</div>
+{% endblock %}

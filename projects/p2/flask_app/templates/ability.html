@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<b>{{ability | title}} Info</b>
+<h5>Ability Users</h5>
+<ul>
+  {% for i in range(0, pokemon_length) %}
+    <a href="{{url_for('pokemon_info', name=pokemon[i])}}"><li>{{pokemon[i]}}</li></a>
+  {% endfor %}
+</ul>
+{% endblock %}
