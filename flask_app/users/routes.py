@@ -21,7 +21,7 @@ def register():
         hashed = bcrypt.generate_password_hash(otp_secret + form.password.data).decode('utf-8')
         user = User(username=form.username.data, email=form.email.data, password=hashed, otp_secret=otp_secret, is_confirmed=False)
         msg = Message("Please Confirm Your Account", sender="jjohnsonjjohnson123123@gmail.com", recipients=[form.email.data])
-        msg.body="Please confirm your account at https://127.0.0.1:5000/confirm_account/" + form.username.data
+        msg.body="Please confirm your account at https://finalprojectbencarlisle.herokuapp.com/confirm_account/" + form.username.data
         mail.send(msg)
         db.session.add(user)
         db.session.commit()
