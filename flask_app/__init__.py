@@ -91,8 +91,8 @@ def create_app():
         db.create_all()
     talisman.content_security_policy = csp
     talisman.content_security_policy_report_uri = "/csp_error_handling"
-    talisman.force_https = True
-    talisman.force_https_permanent = True
+    # talisman.force_https = True
+    # talisman.force_https_permanent = True
     talisman.frame_options = 'SAMEORIGIN'
     talisman.frame_options_allow_from = 'None'
     talisman.session_cookie_secure = True
