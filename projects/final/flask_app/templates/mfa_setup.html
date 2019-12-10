@@ -2,7 +2,10 @@
 {% block content %}
 <div>
   <h1>Two Factor Authentication Setup</h1>
-  <p>You are almost done! Please start FreeOTP on your smartphone and scan the following QR Code with it and then confirm your account through email:</p>
+  <p>You are almost done! Please start Duo on your smartphone and scan the following QR Code with it and then confirm your account through email:</p>
   <img src={{ qrcode(url) }}>
+</div>
+<div>
+  <a href={{ url_for('users.login') }}>Log In!</a>
 </div>
 {% endblock %}

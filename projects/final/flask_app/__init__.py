@@ -63,7 +63,6 @@ def create_app():
 
     app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///site.db"
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-    app.config["ssl_context"] =('cert.pem', 'key.pem')
     app.config.update(dict(
         DEBUG = True,
         MAIL_SERVER = 'smtp.gmail.com',
